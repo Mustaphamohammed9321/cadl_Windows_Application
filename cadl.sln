@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cadl", "cadl.csproj", "{65384A8B-E21E-4D4A-87DF-7CC25DF1E51B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65384A8B-E21E-4D4A-87DF-7CC25DF1E51B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65384A8B-E21E-4D4A-87DF-7CC25DF1E51B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65384A8B-E21E-4D4A-87DF-7CC25DF1E51B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65384A8B-E21E-4D4A-87DF-7CC25DF1E51B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A89F2165-6675-4BC3-9271-EEE40EE1EBC2}
+	EndGlobalSection
+EndGlobal

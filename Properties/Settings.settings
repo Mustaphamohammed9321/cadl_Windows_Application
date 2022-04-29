@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="cadl.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">persist security info = false;Data Source=mustapha-garba-;Initial Catalog=ONE_HOME;Integrated Security=True;TrustServerCertificate=True;encrypt = false;</Value>
+    </Setting>
+    <Setting Name="CryptKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ADCFEBCDAEFCDEACFEABCEAFECBACEF9</Value>
+    </Setting>
+    <Setting Name="nConString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\Downloads\cadl\cadl\Database1.mdf;Integrated Security=True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
