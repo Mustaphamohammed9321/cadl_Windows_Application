@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cadl.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,6 +66,12 @@ namespace cadl
             this.Hide();
             f4.ShowDialog();
 
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            CountryRepository countryRepo = new CountryRepository();
+            comboBox4.Items.Add(countryRepo.GetAllCountries().Data);
         }
     }
 }

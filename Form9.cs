@@ -68,7 +68,15 @@ namespace cadl
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            DialogResult diagRes = MessageBox.Show("Are you sure you want to exit", "CADL - Capital Agricultural Development Limited", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (diagRes == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                Refresh();
+            }
         }
     }
 }

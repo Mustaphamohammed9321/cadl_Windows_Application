@@ -19,23 +19,23 @@ namespace cadl
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Start();
-            if (pictureBox1.Visible == true)
-            {
-                pictureBox1.Visible = false;
-                pictureBox2.Visible = true;
-            }
-            else if (pictureBox2.Visible == true)
-            {
-                pictureBox2.Visible = false;
-                pictureBox3.Visible = true;
-            }
-            else if (pictureBox3.Visible == true)
-            {
-                pictureBox3.Visible = false;
-                pictureBox1.Visible = true;
+            //timer1.Start();
+            //if (pictureBox1.Visible == true)
+            //{
+            //    pictureBox1.Visible = false;
+            //    pictureBox2.Visible = true;
+            //}
+            //else if (pictureBox2.Visible == true)
+            //{
+            //    pictureBox2.Visible = false;
+            //    pictureBox3.Visible = true;
+            //}
+            //else if (pictureBox3.Visible == true)
+            //{
+            //    pictureBox3.Visible = false;
+            //    pictureBox1.Visible = true;
 
-            }
+            //}
 
         }
 
@@ -68,10 +68,14 @@ namespace cadl
 
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
             Form9 f9 = new Form9();
             this.Hide();
             f9.ShowDialog();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
