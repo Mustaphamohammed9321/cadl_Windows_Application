@@ -13,7 +13,7 @@ namespace cadl.Models
         public string Name { get; set; }
         public string NiceName { get; set; }
         public string ISO3 { get; set; }
-        public string NumCode { get; set; }
-        public string PhoneCode { get; set; }
+        public Int16 NumCode { get; set; }
+        public int PhoneCode { get; set; }
     }
 }

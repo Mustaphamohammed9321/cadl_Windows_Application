@@ -15,7 +15,7 @@ namespace cadl
             ApplicationConfiguration.Initialize();
             RepoDb.SqlServerBootstrap.Initialize();
             //Application.Run(new Form4());
-            Application.Run(new Form1());
+            Application.Run(new Form3());
             //string apiUrl = ConfigurationManager.AppSettings["ServiceUrl"].ToString();
         }
     }

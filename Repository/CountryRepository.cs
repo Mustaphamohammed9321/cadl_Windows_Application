@@ -12,44 +12,106 @@ namespace cadl.Repository
     public class CountryRepository
     {
 
-        public GenericResponse GetAllCountries()
+        public List<CountryResponse> GetAllCountries()
         {
             try
             {
                 using (var ctx = new SqlConnection(Properties.Settings.Default.nConString))
                 {
-                    return new GenericResponse 
-                    { 
-                        Data = ctx.QueryAll<Country>().ToList(), 
-                        ResponseCode = 00, 
-                        ResponseMessage = "Command Completed Successfully" 
-                    };
+                    var countryDetailList = ctx.QueryAll<Country>(fields: Field.Parse<Country>(t => new
+                    {
+                        t.Id,
+                        t.Name
+                    })).ToList();
+
+                    var listItem = new List<CountryResponse>();
+
+                    foreach (var item in countryDetailList)
+                    {
+                        listItem.Add(new CountryResponse
+                        {
+                            Id = item.Id,
+                            CountryName = item.Name,
+                        });
+                    }
+                    return listItem;
+                    //return new CountryResponse
+                    //{
+                    //    Id = countryDetailList[0].Id,
+                    //    CountryName = countryDetailList[0].Name,
+                    //    DateTime = DateTime.Now,
+                    //    ResponseCode = 00,
+                    //    ResponseMessage = "Command Completed Successfully",
+                    //};
+
                 }
             }
             catch (Exception ex)
             {
-                return new GenericResponse { ResponseMessage = ex.Message, ResponseCode = 99, DateTime = DateTime.Now };
+                throw;
+                //return new CountryResponse { ResponseMessage = ex.Message, ResponseCode = 99, DateTime = DateTime.Now };
             }
         }
 
-
-        public GenericResponse GetCountryById(int id)
+        public List<StateResponse> GetCountryById(string id)
         {
             try
             {
                 using (var ctx = new SqlConnection(Properties.Settings.Default.nConString))
                 {
-                    return new GenericResponse
+
+                    var stateDetails = ctx.Query<State>(w => w.CountryId == int.Parse(id), fields: Field.Parse<State>(q => new
                     {
-                        Data = ctx.Query<Country>(w => w.Id == id).FirstOrDefault(),
-                        ResponseCode = 00,
-                        ResponseMessage = "Command Completed Successfully"
-                    };
+                        q.Id,
+                        q.Name
+                    }));
+
+                    var stateRes = new List<StateResponse>();
+                    foreach (var item in stateDetails)
+                    {
+                        stateRes.Add(new StateResponse
+                        {
+                            Id = item.Id,
+                            StateName = item.Name,
+                        });
+                    }
+                    return stateRes;
                 }
             }
             catch (Exception ex)
             {
-                return new GenericResponse { ResponseMessage = ex.Message, ResponseCode = 99, DateTime = DateTime.Now };
+                throw;
+            }
+        }
+
+        public List<LGAResponse>GetLGAById(string id)
+        {
+            try
+            {
+                using (var ctx = new SqlConnection(Properties.Settings.Default.nConString))
+                {
+
+                    var stateDetails = ctx.Query<LGA>(w => w.StateId == int.Parse(id), fields: Field.Parse<LGA>(q => new
+                    {
+                        q.LGAId,
+                        q.LGAName
+                    }));
+
+                    var lgaRes = new List<LGAResponse>();
+                    foreach (var item in stateDetails)
+                    {
+                        lgaRes.Add(new LGAResponse
+                        {
+                            LGAId = item.LGAId,
+                            LGAName = item.LGAName,
+                        });
+                    }
+                    return lgaRes;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
             }
         }
 

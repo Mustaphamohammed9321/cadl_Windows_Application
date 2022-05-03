@@ -380,16 +380,15 @@
             // comboBox4
             // 
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
             this.comboBox4.Location = new System.Drawing.Point(59, 348);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(298, 28);
             this.comboBox4.TabIndex = 73;
+            this.comboBox4.SelectionChangeCommitted += new System.EventHandler(this.comboBox4_SelectionChangeCommitted);
             // 
             // comboBox3
             // 
@@ -404,6 +403,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(261, 28);
             this.comboBox3.TabIndex = 72;
+            this.comboBox3.SelectionChangeCommitted += new System.EventHandler(this.comboBox3__SelectionChangeCommitted);
             // 
             // textBox33
             // 
@@ -826,7 +826,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label25.Location = new System.Drawing.Point(507, 255);
+            this.label25.Location = new System.Drawing.Point(507, 252);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(141, 23);
             this.label25.TabIndex = 45;

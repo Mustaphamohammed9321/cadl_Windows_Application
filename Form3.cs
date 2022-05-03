@@ -68,10 +68,63 @@ namespace cadl
 
         }
 
+
         private void Form3_Load(object sender, EventArgs e)
         {
+            comboBox3.Enabled = false;
+            comboBox5.Enabled = false;
+
+
             CountryRepository countryRepo = new CountryRepository();
-            comboBox4.Items.Add(countryRepo.GetAllCountries().Data);
+            var details = countryRepo.GetAllCountries();
+            comboBox4.DataSource = details;
+            comboBox4.DisplayMember = "CountryName";
+            comboBox4.ValueMember = "Id";
+
+
+            //comboBox4.DataSource = new BindingSource(comboSource, null);
+            //comboBox4.DisplayMember = "Value";
+            //comboBox4.ValueMember = "Key";
+        }
+
+
+
+        private void comboBox4_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CountryRepository countryRepo = new CountryRepository();
+            var det = countryRepo.GetCountryById(comboBox4.SelectedValue.ToString());
+            if (det.Count > 0)
+            {
+                comboBox3.Enabled = true;
+                comboBox3.DataSource = det;
+                comboBox3.DisplayMember = "StateName";
+                comboBox3.ValueMember = "Id";
+            }
+            else
+            {
+                comboBox3.Enabled = false;
+                comboBox3.Items.Clear();
+            }
+            //MessageBox.Show($"{comboBox4.SelectedValue.ToString()}", "CADL - The APP", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void comboBox3__SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CountryRepository countryRepo = new CountryRepository();
+            var lgaDetails = countryRepo.GetLGAById(comboBox3.SelectedValue.ToString());
+            if (lgaDetails.Count > 0)
+            {
+                comboBox5.Enabled = true;
+                comboBox5.DataSource = lgaDetails;
+                comboBox5.DisplayMember = "LGAName";
+                comboBox5.ValueMember = "LGAId";
+            }
+            else
+            {
+                comboBox5.Enabled = false;
+                comboBox5.Items.Clear();
+            }
         }
     }
 }
